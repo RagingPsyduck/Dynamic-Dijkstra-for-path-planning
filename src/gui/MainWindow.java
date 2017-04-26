@@ -1,11 +1,12 @@
 package gui;
 
 import algo.DijkstraAlgorithm;
+import models.Edge;
 import models.Graph;
+import models.Node;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,26 +25,70 @@ public class MainWindow extends JPanel {
     private void setGraphPanel(){
         graph = new Graph();
         graphPanel = new GraphPanel(graph);
-        graphPanel.setPreferredSize(new Dimension(9000, 4096));
+        graphPanel.setPreferredSize(new Dimension(900, 400));
 
         JScrollPane scroll = new JScrollPane();
         scroll.setViewportView(graphPanel);
         scroll.setPreferredSize(new Dimension(750, 500));
-        scroll.getViewport().setViewPosition(new Point(4100, 0));
+        scroll.getViewport().setViewPosition(new Point(400, 0));
         add(scroll, BorderLayout.CENTER);
-        setTopPanel();
         setButtons();
+
+        initializeMap();
     }
 
-    private void setTopPanel() {
-        JLabel info = new JLabel("Dijkstra Shortest Path Visualiser");
-        info.setForeground(new Color(230, 220, 250));
-        JPanel panel = new JPanel();
-        panel.setBackground(new Color(130, 50, 250));
-        panel.add(info);
-        panel.setBorder(new EmptyBorder(5, 5, 5, 5));
-        add(panel, BorderLayout.NORTH);
+    private void initializeMap(){
+
+
+        Node node1 = new Node(new Point(100,200));
+        Node node2 = new Node(new Point(200,200));
+        Node node3 = new Node(new Point(300,200));
+        Node node4 = new Node(new Point(400,200));
+        Node node5 = new Node(new Point(500,200));
+        Node node6 = new Node(new Point(600,200));
+
+
+        Node node7 = new Node(new Point(300,300));
+        Node node8 = new Node(new Point(400,300));
+        Node node9 = new Node(new Point(300,400));
+        Node node10 = new Node(new Point(400,400));
+
+
+        graph.addNode(node1);
+        graph.addNode(node2);
+        graph.addNode(node3);
+        graph.addNode(node4);
+        graph.addNode(node5);
+        graph.addNode(node6);
+
+        graph.addNode(node7);
+        graph.addNode(node8);
+        graph.addNode(node9);
+        graph.addNode(node10);
+
+
+        graph.addEdge(new Edge(node1,node2));
+        graph.addEdge(new Edge(node1,node3));
+        graph.addEdge(new Edge(node2,node3));
+        graph.addEdge(new Edge(node2,node7));
+        graph.addEdge(new Edge(node1,node7));
+        graph.addEdge(new Edge(node3,node4));
+        graph.addEdge(new Edge(node4,node5));
+
+        graph.addEdge(new Edge(node5,node6));
+        graph.addEdge(new Edge(node6,node8));
+        graph.addEdge(new Edge(node8,node10));
+        graph.addEdge(new Edge(node7,node9));
+        graph.addEdge(new Edge(node9,node10));
+        graph.addEdge(new Edge(node7,node8));
+
+
+
+
+
+
     }
+
 
     private void setButtons(){
         JButton run = new JButton();
