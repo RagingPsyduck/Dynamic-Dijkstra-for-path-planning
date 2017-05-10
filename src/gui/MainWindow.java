@@ -42,10 +42,11 @@ public class MainWindow extends JPanel {
 
         Node node1 = new Node(new Point(100,200));
         Node node2 = new Node(new Point(100,500));
-        Node node3 = new Node(new Point(300,200));
-        Node node4 = new Node(new Point(400,200));
-        Node node5 = new Node(new Point(500,200));
-        Node node6 = new Node(new Point(600,200));
+        Node node3 = new Node(new Point(200,200));
+        Node node4 = new Node(new Point(200,500));
+
+        Node node5 = new Node(new Point(700,200));
+        Node node6 = new Node(new Point(800,200));
 
 
         Node node7 = new Node(new Point(300,300));
@@ -71,19 +72,19 @@ public class MainWindow extends JPanel {
         street1.setName("Coventry Rd");
         graph.addEdge(street1);
 
-        graph.addEdge(new Edge(node1,node3));
-        graph.addEdge(new Edge(node2,node3));
-        graph.addEdge(new Edge(node2,node7));
-        graph.addEdge(new Edge(node1,node7));
-        graph.addEdge(new Edge(node3,node4));
-        graph.addEdge(new Edge(node4,node5));
+        Edge street2 = new Edge(node1,node3);
+        street2.setName("Larchmere Blvd");
+        graph.addEdge(street2);
 
-        graph.addEdge(new Edge(node5,node6));
-        graph.addEdge(new Edge(node6,node8));
-        graph.addEdge(new Edge(node8,node10));
-        graph.addEdge(new Edge(node7,node9));
-        graph.addEdge(new Edge(node9,node10));
-        graph.addEdge(new Edge(node7,node8));
+        Edge street3 = new Edge(node3,node4);
+        street3.setName("Edicott Rd");
+        graph.addEdge(street3);
+
+
+        Edge street4 = new Edge(node2,node4);
+        street4.setName("Shaker Blvd");
+        graph.addEdge(street4);
+
 
 
 

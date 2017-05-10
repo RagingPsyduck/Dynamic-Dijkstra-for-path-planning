@@ -3,8 +3,8 @@ package models;
 public class Edge {
     private Node one;
     private Node two;
-    private int weight = 1;
-    private String name  = "Street One";
+    private int weight = 4;
+    private String name;
 
     public Edge(Node one, Node two){
         this.one = one;
