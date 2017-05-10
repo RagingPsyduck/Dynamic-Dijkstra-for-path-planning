@@ -4,6 +4,7 @@ public class Edge {
     private Node one;
     private Node two;
     private int weight = 1;
+    private String name  = "Street One";
 
     public Edge(Node one, Node two){
         this.one = one;
@@ -25,6 +26,8 @@ public class Edge {
     public int getWeight(){
         return weight;
     }
+
+    public String getName() { return name; }
 
     public boolean hasNode(Node node){
         return one==node || two==node;

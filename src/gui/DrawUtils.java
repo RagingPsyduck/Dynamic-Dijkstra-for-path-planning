@@ -62,6 +62,7 @@ public class DrawUtils {
         int rad = radius/2;
         g.fillOval(x-rad, y-rad, 2*rad, 2*rad);
         drawWeightText(String.valueOf(edge.getWeight()), x, y);
+        drawNameText(String.valueOf(edge.getName()), x, y - 20 );
     }
 
     public void drawPath(java.util.List<Node> path) {
@@ -162,6 +163,14 @@ public class DrawUtils {
         double t_width = fm.getStringBounds(text, g).getWidth();
         g.drawString(text, (int) (x - t_width / 2), (y + fm.getMaxAscent() / 2));
     }
+
+    public void drawNameText(String text, int x, int y) {
+        g.setColor(parseColor("#cccccc"));
+        FontMetrics fm = g.getFontMetrics();
+        double t_width = fm.getStringBounds(text, g).getWidth();
+        g.drawString(text, (int) (x - t_width / 2), (y + fm.getMaxAscent() / 2));
+    }
+
 
     public void drawCentreText(String text, int x, int y) {
         FontMetrics fm = g.getFontMetrics();
