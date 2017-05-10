@@ -165,7 +165,7 @@ public class DrawUtils {
     }
 
     public void drawNameText(String text, int x, int y) {
-        g.setColor(parseColor("#cccccc"));
+        g.setColor(Color.black);
         FontMetrics fm = g.getFontMetrics();
         double t_width = fm.getStringBounds(text, g).getWidth();
         g.drawString(text, (int) (x - t_width / 2), (y + fm.getMaxAscent() / 2));

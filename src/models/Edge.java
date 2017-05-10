@@ -27,6 +27,10 @@ public class Edge {
         return weight;
     }
 
+    public void setName(String inputName){
+        name = inputName;
+    }
+
     public String getName() { return name; }
 
     public boolean hasNode(Node node){

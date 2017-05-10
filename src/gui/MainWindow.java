@@ -41,7 +41,7 @@ public class MainWindow extends JPanel {
 
 
         Node node1 = new Node(new Point(100,200));
-        Node node2 = new Node(new Point(200,200));
+        Node node2 = new Node(new Point(100,500));
         Node node3 = new Node(new Point(300,200));
         Node node4 = new Node(new Point(400,200));
         Node node5 = new Node(new Point(500,200));
@@ -67,7 +67,10 @@ public class MainWindow extends JPanel {
         graph.addNode(node10);
 
 
-        graph.addEdge(new Edge(node1,node2));
+        Edge street1 = new Edge(node1,node2);
+        street1.setName("Coventry Rd");
+        graph.addEdge(street1);
+
         graph.addEdge(new Edge(node1,node3));
         graph.addEdge(new Edge(node2,node3));
         graph.addEdge(new Edge(node2,node7));
