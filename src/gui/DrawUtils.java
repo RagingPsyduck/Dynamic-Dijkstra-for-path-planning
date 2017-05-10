@@ -62,7 +62,7 @@ public class DrawUtils {
         int rad = radius/2;
         g.fillOval(x-rad, y-rad, 2*rad, 2*rad);
         drawWeightText(String.valueOf(edge.getWeight()), x, y);
-        drawNameText(String.valueOf(edge.getName()), x, y - 30 );
+        if( edge.getName() != null )drawNameText(String.valueOf(edge.getName()), x, y - 30 );
     }
 
     public void drawPath(java.util.List<Node> path) {
