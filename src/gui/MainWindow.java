@@ -12,6 +12,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.HashMap;
+
 public class MainWindow extends JPanel {
 
     private Graph graph;
@@ -38,8 +42,30 @@ public class MainWindow extends JPanel {
     }
 
     private void initializeMap(){
+        HashMap<String,Node> map = new HashMap<>();
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader("node.csv"));
+            reader.readLine();
+            String line;
+            while((line=reader.readLine())!=null){
+                String item[] = line.split(",");
+                String nodeName = item[0];
+                int xValue = Integer.parseInt(item[1]);
+                int yValue = Integer.parseInt(item[2]);
+                map.put(nodeName,new Node(new Point(xValue,yValue)));
+            }
+        }  catch (Exception e) {
+            e.printStackTrace();
+        }
 
+        int size = map.size();
+        for( int i = 1 ; i <= size ; i++){
+            StringBuilder sb = new StringBuilder();
+            sb.append("node").append(i);
+            graph.addNode(map.get(sb.toString()));
+        }
 
+        /*
         Node node1 = new Node(new Point(100,200));
         Node node2 = new Node(new Point(100,500));
         Node node3 = new Node(new Point(200,200));
@@ -120,6 +146,7 @@ public class MainWindow extends JPanel {
 
         Edge street14 = new Edge(node9,node10);
         graph.addEdge(street14);
+        */
     }
 
 
