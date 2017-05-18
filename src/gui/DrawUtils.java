@@ -10,7 +10,7 @@ import java.util.List;
 
 public class DrawUtils {
     private Graphics2D g;
-    private static int radius = 20;
+    private static int radius = 15;
 
     public DrawUtils(Graphics2D graphics2D){
         g = graphics2D;
@@ -148,11 +148,11 @@ public class DrawUtils {
         g.setColor(parseColor("#9C27B0"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius-=5;
+        radius-=2;
         g.setColor(parseColor("#E1BEE7"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius+=5;
+        radius+=2;
         g.setColor(parseColor("#9C27B0"));
         drawCentreText(String.valueOf(node.getId()), node.getX(), node.getY());
     }

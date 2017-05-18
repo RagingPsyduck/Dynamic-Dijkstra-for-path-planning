@@ -29,11 +29,11 @@ public class MainWindow extends JPanel {
     private void setGraphPanel(){
         graph = new Graph();
         graphPanel = new GraphPanel(graph);
-        graphPanel.setPreferredSize(new Dimension(900, 400));
+        graphPanel.setPreferredSize(new Dimension(1200, 400));
 
         JScrollPane scroll = new JScrollPane();
         scroll.setViewportView(graphPanel);
-        scroll.setPreferredSize(new Dimension(750, 500));
+        scroll.setPreferredSize(new Dimension(1200, 500));
         scroll.getViewport().setViewPosition(new Point(400, 0));
         add(scroll, BorderLayout.CENTER);
         setButtons();
@@ -44,10 +44,10 @@ public class MainWindow extends JPanel {
     private void initializeMap(){
         HashMap<String,Node> map = new HashMap<>();
         try{
-            BufferedReader reader = new BufferedReader(new FileReader("node.csv"));
-            reader.readLine();
+            BufferedReader nodeReader = new BufferedReader(new FileReader("node.csv"));
+            nodeReader.readLine();
             String line;
-            while((line=reader.readLine())!=null){
+            while((line=nodeReader.readLine())!=null){
                 String item[] = line.split(",");
                 String nodeName = item[0];
                 int xValue = Integer.parseInt(item[1]);
@@ -64,6 +64,26 @@ public class MainWindow extends JPanel {
             sb.append("node").append(i);
             graph.addNode(map.get(sb.toString()));
         }
+
+        try{
+            BufferedReader roadReader = new BufferedReader(new FileReader("road.csv"));
+            roadReader.readLine();
+            String line;
+            while((line=roadReader.readLine())!=null){
+                String roadInfo[] = line.split(",");
+                String nodeA = roadInfo[0];
+                String nodeB = roadInfo[1];
+                Node temp1 = map.get(nodeA);
+                Node temp2 = map.get(nodeB);
+                Edge street = new Edge(temp1,temp2);
+                street.setName(roadInfo[2]);
+                graph.addEdge(street);
+            }
+        }  catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
 
         /*
         Node node1 = new Node(new Point(100,200));
