@@ -29,11 +29,11 @@ public class MainWindow extends JPanel {
     private void setGraphPanel(){
         graph = new Graph();
         graphPanel = new GraphPanel(graph);
-        graphPanel.setPreferredSize(new Dimension(1200, 400));
+        graphPanel.setPreferredSize(new Dimension(1200, 2000));
 
         JScrollPane scroll = new JScrollPane();
         scroll.setViewportView(graphPanel);
-        scroll.setPreferredSize(new Dimension(1200, 500));
+        scroll.setPreferredSize(new Dimension(1200, 2000));
         scroll.getViewport().setViewPosition(new Point(400, 0));
         add(scroll, BorderLayout.CENTER);
         setButtons();
