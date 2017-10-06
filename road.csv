@@ -73,7 +73,7 @@ node30,node52,Warrensville Center Rd,40
 node31,node53,Lee Rd,20
 node53,node55,Lee Rd,20
 node55,node59,Lee Rd,20
-node53,node54,Parkland Dr,40
+node53,node54,Parkland Dr,25
 node55,node56,Fernway Rd,15
 node56,node57, ,36
 node57,node58, ,10
@@ -81,7 +81,7 @@ node56,node60,Daleford Rd,24
 node59,node60,Van Aken Blvd,26
 node60,node62,Van Aken Blvd,20
 node58,node62,Ingleside Rd,20
-node54,node58,Parkland Dr,30
+node54,node58,Parkland Dr,40
 node58,node61, ,5
 node61,node63,Norwood Rd,25
 node62,node63, ,20

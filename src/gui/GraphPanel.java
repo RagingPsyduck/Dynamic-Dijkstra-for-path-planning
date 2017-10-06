@@ -128,18 +128,25 @@ public class GraphPanel extends JPanel implements MouseListener, MouseMotionList
                 return;
             }
 
-            String input = JOptionPane.showInputDialog("Enter weight for " + hoveredEdge.toString()
-                                                        + " : ");
-            try {
-                int weight = Integer.parseInt(input);
-                if (weight > 0) {
-                    hoveredEdge.setWeight(weight);
-                    graph.setSolved(false);
-                    repaint();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Weight should be positive");
-                }
-            } catch (NumberFormatException nfe) {}
+            String inputs = JOptionPane.showInputDialog(
+                    "Enter weight for " + hoveredEdge.toString() + " : " +
+                    "\nEnter speed, number of lanes and number of cars, and length of road"
+            );
+            String[] inputArr = {"1"};
+
+            if( inputs != null ){
+                try {
+                    inputArr = inputs.split(" ");
+                    int weight = Integer.parseInt(inputArr[0]);
+                    if (weight > 0) {
+                        hoveredEdge.setWeight(weight);
+                        graph.setSolved(false);
+                        repaint();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Weight should be positive");
+                    }
+                } catch (NumberFormatException nfe) {}
+            }
             return;
         }
 
