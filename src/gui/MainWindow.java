@@ -75,8 +75,14 @@ public class MainWindow extends JPanel {
                 String nodeB = roadInfo[1];
                 Node temp1 = map.get(nodeA);
                 Node temp2 = map.get(nodeB);
+//                int cost;
+//                String costStr = roadInfo[2];
+//                if(costStr!=null) cost = Integer.parseInt(costStr);
+//                else cost = 4;
                 Edge street = new Edge(temp1,temp2);
                 street.setName(roadInfo[2]);
+                int cost = Integer.parseInt(roadInfo[3]);
+                street.setWeight(cost);
                 graph.addEdge(street);
             }
         }  catch (Exception e) {

@@ -65,7 +65,7 @@ public class DrawUtils {
         if( edge.getName() != null )drawNameText(String.valueOf(edge.getName()), x, y - 30 );
     }
 
-    public void drawPath(java.util.List<Node> path) {
+    public void drawPath(List<Node> path) {
         List<Edge> edges = new ArrayList<>();
         for(int i = 0; i < path.size()-1; i++) {
             edges.add(new Edge(path.get(i), path.get(i+1)));

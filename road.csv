@@ -1,89 +1,89 @@
 nodeA,nodeB,street
-node1,node2,Farimount Blvd
-node2,node3,Farimount Blvd
-node3,node4,Farimount Blvd
-node4,node5,Farimount Blvd
-node5,node6,Farimount Blvd
-node6,node7,Farimount Blvd
-node1,node8,Lee Rd
-node8,node9,N Park Blvd
-node9,node10,N Park Blvd
-node10,node11,N Park Blvd
-node11,node12,Shelburne Rd
-node12,node13,Shelburne Rd
-node7,node13,Warrensville Center Rd
-node13,node18,Warrensville Center Rd
-node8,node14,Lee Rd
-node14,node15,S Park Blvd
-node15,node16,S Park Blvd
-node16,node17,S Park Blvd
-node17,node18,S Park Blvd
-node14,node19,Lee Rd
-node19,node20,Shaker Blvd
-node20,node21,Shaker Blvd
-node21,node22,Shaker Blvd
-node22,node23,Shaker Blvd
-node23,node24,Shaker Blvd
-node24,node25, ,
-node25,node26, ,
-node26,node27, ,
-node27,node28, ,
-node28,node29,Shaker Blvd
-node29,node30,Shaker Blvd
-node18,node30,Warrensville Center Rd
-node19,node31,Lee Rd
-node31,node32,S Woodland Rd
-node32,node33, ,
-node33,node34, ,
-node34,node35, ,
-node35,node36, ,
-node36,node37, ,
-node37,node38, ,
-node38,node39, ,
-node39,node40, ,
-node20,node32,Broxton Rd
-node21,node33,Winthrop Rd
-node22,node34,Paxtron Rd
-node23,node35,Attleboro Rd
-node24,node36,Litchfield Rd
-node25,node37,Glengary Rd
-node26,node38,Fontenay Rd
-node27,node39,Bringhton Rd
-node28,node40,Torrington Rd
-node28,node41,Eaton Rd
-node41,node42, ,
-node40,node43, ,
-node43,node44, ,
-node44,node45, ,
-node45,node46, ,
-node46,node47, ,
-node42,node45, ,
-node41,node43,Claremont Rd
-node29,node42,Manchester Rd
-node42,node46,Carlton Rd
-node47,node50, ,
-node50,node51, ,
-node51,node52, ,
-node29,node48,Montgomery Rd
-node49,node30, ,
-node48,node49, ,
-node48,node47,Kingsely Rd
-node49,node51,Falmounth Rd
-node30,node52,Warrensville Center Rd
-node31,node53,Lee Rd
-node53,node55,Lee Rd
-node55,node59,Lee Rd
-node53,node54,Parkland Dr
-node55,node56,Fernway Rd
-node56,node57, ,
-node57,node58, ,
-node56,node60,Daleford Rd
-node59,node60,Van Aken Blvd
-node60,node62,Van Aken Blvd
-node58,node62,Ingleside Rd
-node54,node58,Parkland Dr
-node58,node61, ,
-node61,node63,Norwood Rd
-node62,node63, ,
-node52,node64, ,
-node63,node64, ,
+node1,node2,Farimount Blvd,20
+node2,node3,Farimount Blvd,20
+node3,node4,Farimount Blvd,20
+node4,node5,Farimount Blvd,20
+node5,node6,Farimount Blvd,20
+node6,node7,Farimount Blvd,20
+node1,node8,Lee Rd,4
+node8,node9,N Park Blvd,25
+node9,node10,N Park Blvd,15
+node10,node11,N Park Blvd,15
+node11,node12,Shelburne Rd,20
+node12,node13,Shelburne Rd,40
+node7,node13,Warrensville Center Rd,20
+node13,node18,Warrensville Center Rd,10
+node8,node14,Lee Rd,10
+node14,node15,S Park Blvd,20
+node15,node16,S Park Blvd,40
+node16,node17,S Park Blvd,30
+node17,node18,S Park Blvd,20
+node14,node19,Lee Rd,20
+node19,node20,Shaker Blvd,5
+node20,node21,Shaker Blvd,5
+node21,node22,Shaker Blvd,5
+node22,node23,Shaker Blvd,5
+node23,node24,Shaker Blvd,5
+node24,node25, ,5
+node25,node26, ,5
+node26,node27, ,5
+node27,node28, ,5
+node28,node29,Shaker Blvd,25
+node29,node30,Shaker Blvd,25
+node18,node30,Warrensville Center Rd,40
+node19,node31,Lee Rd,40
+node31,node32,S Woodland Rd,40
+node32,node33, ,40
+node33,node34, ,40
+node34,node35, ,40
+node35,node36, ,40
+node36,node37, ,40
+node37,node38, ,40
+node38,node39, ,40
+node39,node40, ,40
+node20,node32,Broxton Rd,40
+node21,node33,Winthrop Rd,40
+node22,node34,Paxtron Rd,40
+node23,node35,Attleboro Rd,40
+node24,node36,Litchfield Rd,40
+node25,node37,Glengary Rd,40
+node26,node38,Fontenay Rd,40
+node27,node39,Bringhton Rd,40
+node28,node40,Torrington Rd,40
+node28,node41,Eaton Rd,40
+node41,node42, ,40
+node40,node43, ,40
+node43,node44, ,40
+node44,node45, ,40
+node45,node46, ,20
+node46,node47, ,20
+node42,node45, ,20
+node41,node43,Claremont Rd,40
+node29,node42,Manchester Rd,40
+node42,node46,Carlton Rd,40
+node47,node50, ,40
+node50,node51, ,40
+node51,node52, ,40
+node29,node48,Montgomery Rd,40
+node49,node30, ,40
+node48,node49, ,40
+node48,node47,Kingsely Rd,40
+node49,node51,Falmounth Rd,40
+node30,node52,Warrensville Center Rd,40
+node31,node53,Lee Rd,20
+node53,node55,Lee Rd,20
+node55,node59,Lee Rd,20
+node53,node54,Parkland Dr,30
+node55,node56,Fernway Rd,15
+node56,node57, ,10
+node57,node58, ,10
+node56,node60,Daleford Rd,20
+node59,node60,Van Aken Blvd,20
+node60,node62,Van Aken Blvd,20
+node58,node62,Ingleside Rd,20
+node54,node58,Parkland Dr,30
+node58,node61, ,5
+node61,node63,Norwood Rd,25
+node62,node63, ,25
+node52,node64, ,50
+node63,node64, ,30

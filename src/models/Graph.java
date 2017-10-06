@@ -92,8 +92,7 @@ public class Graph {
                 break;
             }
         }
-        if(!added)
-            edges.add(new_edge);
+        if(!added) edges.add(new_edge);
     }
 
     public void deleteNode(Node node){
