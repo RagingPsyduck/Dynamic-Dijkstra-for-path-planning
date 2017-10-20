@@ -14,7 +14,9 @@ import java.io.IOException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class MainWindow extends JPanel {
 
@@ -127,10 +129,12 @@ public class MainWindow extends JPanel {
         run.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm(graph);
+                List<Node> path;
                 try {
+                    DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm(graph);
                     dijkstraAlgorithm.run();
-                    graphPanel.setPath(dijkstraAlgorithm.getDestinationPath());
+                    path = dijkstraAlgorithm.getDestinationPath();
+                    graphPanel.setPath(path);
                 } catch (IllegalStateException ise) {
                     JOptionPane.showMessageDialog(null, ise.getMessage());
                 }
@@ -142,8 +146,7 @@ public class MainWindow extends JPanel {
 
     private void setupIcon(JButton button, String img) {
         try {
-            Image icon = ImageIO.read(getClass().getResource(
-                    "/resources/" + img + ".png"));
+            Image icon = ImageIO.read(getClass().getResource("/resources/" + img + ".png"));
             ImageIcon imageIcon = new ImageIcon(icon);
             button.setIcon(imageIcon);
             button.setBorderPainted(false);
