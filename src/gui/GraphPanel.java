@@ -44,12 +44,11 @@ public class GraphPanel extends JPanel implements MouseListener, MouseMotionList
         super.paintComponent(g);
 
         Graphics2D graphics2d = (Graphics2D) g;
-        graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                RenderingHints.VALUE_ANTIALIAS_ON);
-        graphics2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-                RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        graphics2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
         drawUtils = new DrawUtils(graphics2d);
+
 
         if(graph.isSolved()){
             drawUtils.drawPath(path);
