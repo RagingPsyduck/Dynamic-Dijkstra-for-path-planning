@@ -131,16 +131,20 @@ public class MainWindow extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 List<Node> path;
                 try {
-                    while(graph.getSource()!= graph.getDestination()){
-                        DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm(graph);
-                        dijkstraAlgorithm.run();
-                        path = dijkstraAlgorithm.getDestinationPath();
-                        graphPanel.setPath(path);
-
-                        System.out.println(path);
-                        graph.setSource(path.get(1));
-
-                    }
+                    DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm(graph);
+                    dijkstraAlgorithm.run();
+                    path = dijkstraAlgorithm.getDestinationPath();
+                    graphPanel.setPath(path);
+//                    while(graph.getSource()!= graph.getDestination()){
+//                        DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm(graph);
+//                        dijkstraAlgorithm.run();
+//                        path = dijkstraAlgorithm.getDestinationPath();
+//                        graphPanel.setPath(path);
+//
+//                        System.out.println(path);
+//                        graph.setSource(path.get(1));
+//
+//                    }
 
                 } catch (IllegalStateException ise) {
                     JOptionPane.showMessageDialog(null, ise.getMessage());

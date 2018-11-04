@@ -22,7 +22,7 @@ public class DijkstraAlgorithm {
         public int compare(Node node1, Node node2) {
             return distances.get(node1) - distances.get(node2);
         }
-    };
+    }
 
     public DijkstraAlgorithm(Graph graph){
         this.graph = graph;
