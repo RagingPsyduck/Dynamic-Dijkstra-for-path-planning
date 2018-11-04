@@ -1,5 +1,6 @@
 package gui;
 
+import algo.SpaceMeanSpeed;
 import models.Edge;
 import models.Graph;
 import models.Node;
@@ -127,14 +128,24 @@ public class GraphPanel extends JPanel implements MouseListener, MouseMotionList
                 return;
             }
 
-            String inputs = JOptionPane.showInputDialog("Enter weight for " + hoveredEdge.toString() + " : ");
+            String inputs = JOptionPane.showInputDialog(
+                    "Enter weight for " + hoveredEdge.toString() + " : " +
+                            "\nor Enter cars's speed and length of road (separated by comma)"
+            );
 
-            String[] inputArr = {"1"};
+            String[] inputArr;
 
             if (inputs != null) {
                 try {
-                    inputArr = inputs.split(" ");
-                    int weight = Integer.parseInt(inputArr[0]);
+                    int weight;
+                    if(inputs.indexOf(',') != -1){
+                        SpaceMeanSpeed speed = new SpaceMeanSpeed();
+                        weight = speed.calculateCost(inputs.split(","));
+                    } else {
+                        inputArr = inputs.split(" ");
+                         weight = Integer.parseInt(inputArr[0]);
+                    }
+
                     if (weight > 0) {
                         hoveredEdge.setWeight(weight);
                         graph.setSolved(false);
