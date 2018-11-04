@@ -12,7 +12,7 @@ public class DrawUtils {
     private Graphics2D g;
     private static int radius = 15;
 
-    public DrawUtils(Graphics2D graphics2D){
+    public DrawUtils(Graphics2D graphics2D) {
         g = graphics2D;
     }
 
@@ -33,15 +33,15 @@ public class DrawUtils {
         int boundX = (int) p.getX();
         int boundY = (int) p.getY();
 
-        return (x <= boundX + 2.5*radius && x >= boundX - 2.5*radius) && (y <= boundY + 2.5*radius && y >= boundY - 2.5*radius);
+        return (x <= boundX + 2.5 * radius && x >= boundX - 2.5 * radius) && (y <= boundY + 2.5 * radius && y >= boundY - 2.5 * radius);
     }
 
     public static boolean isOnEdge(MouseEvent e, Edge edge) {
 
-        int dist = distToSegment( e.getPoint(),
-                                  edge.getNodeOne().getCoord(),
-                                  edge.getNodeTwo().getCoord() );
-        if (dist<6)
+        int dist = distToSegment(e.getPoint(),
+                edge.getNodeOne().getCoord(),
+                edge.getNodeTwo().getCoord());
+        if (dist < 6)
             return true;
         return false;
     }
@@ -56,22 +56,22 @@ public class DrawUtils {
     public void drawWeight(Edge edge) {
         Point from = edge.getNodeOne().getCoord();
         Point to = edge.getNodeTwo().getCoord();
-        int x = (from.x + to.x)/2;
-        int y = (from.y + to.y)/2;
+        int x = (from.x + to.x) / 2;
+        int y = (from.y + to.y) / 2;
 
-        int rad = radius/2;
-        g.fillOval(x-rad, y-rad, 2*rad, 2*rad);
+        int rad = radius / 2;
+        g.fillOval(x - rad, y - rad, 2 * rad, 2 * rad);
         drawWeightText(String.valueOf(edge.getWeight()), x, y);
-        if( edge.getName() != null )drawNameText(String.valueOf(edge.getName()), x, y - 30 );
+        if (edge.getName() != null) drawNameText(String.valueOf(edge.getName()), x, y - 30);
     }
 
     public void drawPath(List<Node> path) {
         List<Edge> edges = new ArrayList<>();
-        for(int i = 0; i < path.size()-1; i++) {
-            edges.add(new Edge(path.get(i), path.get(i+1)));
+        for (int i = 0; i < path.size() - 1; i++) {
+            edges.add(new Edge(path.get(i), path.get(i + 1)));
         }
 
-        for(Edge edge : edges) {
+        for (Edge edge : edges) {
             drawPath(edge);
         }
     }
@@ -86,16 +86,16 @@ public class DrawUtils {
         drawBoldEdge(edge);
     }
 
-    private void drawBoldEdge(Edge edge){
+    private void drawBoldEdge(Edge edge) {
         Point from = edge.getNodeOne().getCoord();
         Point to = edge.getNodeTwo().getCoord();
         g.setStroke(new BasicStroke(8));
         g.drawLine(from.x, from.y, to.x, to.y);
-        int x = (from.x + to.x)/2;
-        int y = (from.y + to.y)/2;
+        int x = (from.x + to.x) / 2;
+        int y = (from.y + to.y) / 2;
 
         int rad = 13;
-        g.fillOval(x-rad, y-rad, 2*rad, 2*rad);
+        g.fillOval(x - rad, y - rad, 2 * rad, 2 * rad);
     }
 
     public void drawEdge(Edge edge) {
@@ -104,55 +104,55 @@ public class DrawUtils {
         drawWeight(edge);
     }
 
-    private void drawBaseEdge(Edge edge){
+    private void drawBaseEdge(Edge edge) {
         Point from = edge.getNodeOne().getCoord();
         Point to = edge.getNodeTwo().getCoord();
         g.setStroke(new BasicStroke(3));
         g.drawLine(from.x, from.y, to.x, to.y);
     }
 
-    public void drawHalo(Node node){
+    public void drawHalo(Node node) {
         g.setColor(parseColor("#E91E63"));
-        radius+=5;
+        radius += 5;
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
-        radius-=5;
+        radius -= 5;
     }
 
-    public void drawSourceNode(Node node){
+    public void drawSourceNode(Node node) {
         g.setColor(parseColor("#00BCD4"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius-=5;
+        radius -= 5;
         g.setColor(parseColor("#B2EBF2"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius+=5;
+        radius += 5;
         g.setColor(parseColor("#00BCD4"));
         drawCentreText(String.valueOf(node.getId()), node.getX(), node.getY());
     }
 
-    public void drawDestinationNode(Node node){
+    public void drawDestinationNode(Node node) {
         g.setColor(parseColor("#F44336"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius-=5;
+        radius -= 5;
         g.setColor(parseColor("#FFCDD2"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius+=5;
+        radius += 5;
         g.setColor(parseColor("#F44336"));
         drawCentreText(String.valueOf(node.getId()), node.getX(), node.getY());
     }
 
-    public void drawNode(Node node){
+    public void drawNode(Node node) {
         g.setColor(parseColor("#9C27B0"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius-=2;
+        radius -= 2;
         g.setColor(parseColor("#E1BEE7"));
         g.fillOval(node.getX() - radius, node.getY() - radius, 2 * radius, 2 * radius);
 
-        radius+=2;
+        radius += 2;
         g.setColor(parseColor("#9C27B0"));
         drawCentreText(String.valueOf(node.getId()), node.getX(), node.getY());
     }
@@ -183,9 +183,11 @@ public class DrawUtils {
     private static int sqr(int x) {
         return x * x;
     }
+
     private static int dist2(Point v, Point w) {
         return sqr(v.x - w.x) + sqr(v.y - w.y);
     }
+
     private static int distToSegmentSquared(Point p, Point v, Point w) {
         double l2 = dist2(v, w);
         if (l2 == 0) return dist2(p, v);
@@ -193,10 +195,11 @@ public class DrawUtils {
         if (t < 0) return dist2(p, v);
         if (t > 1) return dist2(p, w);
         return dist2(p, new Point(
-                (int)(v.x + t * (w.x - v.x)),
-                (int)(v.y + t * (w.y - v.y))
+                (int) (v.x + t * (w.x - v.x)),
+                (int) (v.y + t * (w.y - v.y))
         ));
     }
+
     private static int distToSegment(Point p, Point v, Point w) {
         return (int) Math.sqrt(distToSegmentSquared(p, v, w));
     }
