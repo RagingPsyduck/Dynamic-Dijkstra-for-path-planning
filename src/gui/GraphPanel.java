@@ -127,10 +127,8 @@ public class GraphPanel extends JPanel implements MouseListener, MouseMotionList
                 return;
             }
 
-            String inputs = JOptionPane.showInputDialog(
-                    "Enter weight for " + hoveredEdge.toString() + " : " +
-                    "\nEnter speed, number of lanes and number of cars, and length of road"
-            );
+            String inputs = JOptionPane.showInputDialog("Enter weight for " + hoveredEdge.toString() + " : ");
+            
             String[] inputArr = {"1"};
 
             if( inputs != null ){
