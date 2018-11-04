@@ -59,7 +59,7 @@ public class DrawUtils {
         int x = (from.x + to.x) / 2;
         int y = (from.y + to.y) / 2;
 
-        int rad = radius / 2;
+        int rad = radius / 2 + 3;
         g.fillOval(x - rad, y - rad, 2 * rad, 2 * rad);
         drawWeightText(String.valueOf(edge.getWeight()), x, y);
         if (edge.getName() != null) drawNameText(String.valueOf(edge.getName()), x, y - 30);
