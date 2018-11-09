@@ -11,6 +11,6 @@ public class SpaceMeanSpeed {
             System.out.println(Integer.valueOf(input[i]));
             temp += 1 / Double.valueOf(input[i]);
         }
-        return (int) (length / (carCount / temp));
+        return (int) (60 * 10 * length / (carCount / temp)) ;
     }
 }
