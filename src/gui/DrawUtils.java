@@ -61,7 +61,8 @@ public class DrawUtils {
 
         int rad = radius / 2 + 3;
         g.fillOval(x - rad, y - rad, 2 * rad, 2 * rad);
-        drawWeightText(String.valueOf(edge.getWeight()), x, y);
+        int weight = edge.getWeight();
+        drawWeightText(String.valueOf(weight > 1000 ? "!" : weight), x, y);
         if (edge.getName() != null) drawNameText(String.valueOf(edge.getName()), x, y - 30);
     }
 
