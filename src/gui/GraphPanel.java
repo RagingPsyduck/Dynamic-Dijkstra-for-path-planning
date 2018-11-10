@@ -1,5 +1,6 @@
 package gui;
 
+import algo.BlockPrediction;
 import algo.SpaceMeanSpeed;
 import models.Edge;
 import models.Graph;
@@ -139,8 +140,15 @@ public class GraphPanel extends JPanel implements MouseListener, MouseMotionList
                 try {
                     int weight;
                     if(inputs.indexOf(',') != -1){
-                        SpaceMeanSpeed speed = new SpaceMeanSpeed();
-                        weight = speed.calculateCost(inputs.split(","));
+                        if (inputs.indexOf('0') == 0) {
+                            weight = 1000;
+                            BlockPrediction prediction = new BlockPrediction();
+                            int time = prediction.calculatePredictionTime(inputs.split(","));
+                            hoveredEdge.setName(String.format("Blockage expect in %d second", time));
+                        } else {
+                            SpaceMeanSpeed speed = new SpaceMeanSpeed();
+                            weight = speed.calculateCost(inputs.split(","));
+                        }
                     } else {
                         inputArr = inputs.split(" ");
                          weight = Integer.parseInt(inputArr[0]);
